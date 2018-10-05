@@ -1,0 +1,111 @@
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=K2D" rel="stylesheet">
+
+
+    <style>
+        body {
+            background: #102038;
+        }
+        
+        #add-question {
+            width: 95vw;
+            height: 95vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        input,
+        select {
+            width: 70%;
+            height: 8%;
+            padding-left: 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-family: 'K2D', sans-serif;
+            border: 3px solid #e9e8e7;
+        }
+        
+        .an {
+            border: 3px solid olive;
+        }
+        
+        .btn {
+            width: 15%;
+            height: 7%;
+            background: olive;
+            font-family: 'K2D', sans-serif;
+            font-size: 24px;
+            color: #fff;
+            border: 0;
+            border-radius: 20px;
+        }
+        
+        @media screen and (max-width: 900px) {
+            .btn {
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <form id="add-question">
+            <select name="select" id="cat">
+                <option value="piastowie">Piastowie</option>
+                <option value="jagiellonowie">Jagiellonowie</option>
+                <option value="elekcja">Wolna Elekcja</option>
+                <option value="zabory">Czas Zaborów</option>
+                <option value="I_ws">I Wojna Światowa</option>
+                <option value="miedzywojnie">Międzywojnie</option>
+                <option value="II_ws">II Wojna Światowa</option>
+                <option value="wspolczesnosc">Współczesność</option>
+                <option value="wynalazcy">Wynalazcy</option>
+                <option value="literatura">Literatura</option>
+                <option value="muzyka">Muzyka</option>
+                <option value="malarstwo">Malarstwo</option>
+                <option value="sport">Sport</option>
+                <option value="geografia">Geografia</option>
+                <option value="architektura">Architektura</option>
+                <option value="kinematografia">Kinematografia</option>
+            </select>
+            <input type="text" name="question" placeholder="Pytanie">
+            <input class="an" type="text" name="a0" placeholder="Odpowiedź 0">
+            <input class="an" type="text" name="a1" placeholder="Odpowiedź 1">
+            <input class="an" type="text" name="a2" placeholder="Odpowiedź 2">
+            <input class="an" type="text" name="a3" placeholder="Odpowiedź 3">
+            <input type="number" name="good" min="0" max="3" placeholder="0-3">
+            <button class="btn">Dodaj</button>
+        </form>
+
+    </div>
+
+    <script>
+        var config = {
+            apiKey: "AIzaSyDpNlACe-mEYG0u2Zv9S1Edk3BYlfY8P0I",
+            authDomain: "poland-quiz-a33d5.firebaseapp.com",
+            databaseURL: "https://poland-quiz-a33d5.firebaseio.com",
+            projectId: "poland-quiz-a33d5",
+            storageBucket: "poland-quiz-a33d5.appspot.com",
+            messagingSenderId: "97160650162"
+        };
+        firebase.initializeApp(config);
+        const db = firebase.firestore();
+        db.settings({
+            timestampsInSnapshots: true
+        });
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
