@@ -15,4 +15,7 @@ form.addEventListener('submit', (e) => {
     form.question.value = '';
     form.good.value = '';
     form.a0.value = '';
+    form.a1.value = '';
+    form.a2.value = '';
+    form.a3.value = '';
 });
